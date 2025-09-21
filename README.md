@@ -5,21 +5,18 @@ Investors often rely on both financial data and leadership qualities when making
 
 This project explores methods to estimate grit in individuals, especially leaders (e.g., CEOs), with the ultimate goal of designing a lightweight, data-driven grit survey that can support investment decision-making.  
 
----
 
 ## 🚩 Problem Statement  
 We aim to answer two key questions:  
 1. **What are the main predictors of grit in an individual?**  
 2. **Can we design a survey that reliably estimates whether or not an individual demonstrates grit?**  
 
----
 
 ## 📊 Datasets  
 We will leverage well-established psychological datasets:  
 - **Duckworth’s Grit Data** – includes grit scores from validated surveys.  
 - **Cattell’s 16 Personality Factors Test** – focuses on personality traits; we will pay special attention to “self-reliance” as a proxy for grit.  
 
----
 
 ## 🗺️ Project Roadmap  
 
@@ -43,7 +40,6 @@ We will leverage well-established psychological datasets:
   - Model limitations and generalizability concerns.  
   - Recommendations for future improvements and scaling.  
 
----
 
 ## ⚙️ Tech Stack  
 - **Python** (pandas, scikit-learn, SHAP, matplotlib/seaborn)  
@@ -51,7 +47,6 @@ We will leverage well-established psychological datasets:
 - **Streamlit** for prototype survey app  
 - **Git/GitHub** for version control & collaboration  
 
----
 
 ## 📂 Repository Structure 
 (BLANK FOR NOW)
