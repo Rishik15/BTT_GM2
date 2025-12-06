@@ -2,34 +2,79 @@ import streamlit as st
 import numpy as np
 from model_inference import model_prediction
 
-st.title("Personality-Based Survey Prediction App")
+st.set_page_config(page_title="Personality Survey", layout="centered")
 
-st.write("Please answer each scenario-based question on a scale of 1–5 (5 = most positive).")
+st.markdown("""
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+}
+.block-container {
+    padding-top: 2rem;
+}
+.question {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 18px 22px;
+    background: #C4C0BE;
+    border-radius: 12px;
+    border: 1px solid #e0e6ed;
+    color: #000000 !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.title("Personality-Based Survey Prediction App")
+st.write("""
+Welcome to the **Personality Scenario Assessment**.  
+Each question presents a situation where you can select how likely you are to respond in the described way.  
+
+**Scale: 1 = least likely, 5 = most likely.**
+
+Take your time and answer honestly for the best results.
+""")
 
 def likert(question):
-    return st.slider(question, 1, 5, 3)
+    st.markdown(f"<div class='question'>{question}</div>", unsafe_allow_html=True)
+    return st.slider("", 1, 5, 1, key=question[:10])
 
+st.subheader("Basic Information")
 age_group = st.selectbox(
     "Which age group do you belong to?",
     ["18–30", "Other"]
 )
-
 age_group_18_30 = 1 if age_group == "18–30" else 0
 
-C8  = likert("You are working on a group project. How likely are you to complete your assigned task without reminders?")
-C9  = likert("Your week is fully planned. How closely do you follow your scheduled routine?")
-C1  = likert("Before an important meeting or event, how prepared are you?")
-C10 = likert("When assigned a task requiring precision, how thorough are you?")
-C5  = likert("When you have chores to do, how quickly do you complete them?")
-C4  = likert("While working on a project, how well do you keep your space organized?")
-N7  = likert("During a typical week, how stable are your moods?")
-C3  = likert("While proofreading a document, how well do you catch mistakes and details?")
-A10 = likert("When meeting someone new, how good are you at making them feel at ease?")
-C2  = likert("How well do you keep your belongings organized in daily life?")
-N5  = likert("When interrupted during work, how difficult is it to disturb or stress you?")
-A8  = likert("If a friend needs help while you're busy, how likely are you to make time for them?")
-O2  = likert("How well do you understand abstract or theoretical ideas?")
-E10 = likert("At a networking event, how comfortable are you speaking with strangers?")
+
+st.subheader("Scenario-Based Questions")
+
+C8 = likert("Your class assigns a long project that requires steady progress over several weeks. Each student is responsible for different tasks, and the group counts on everyone to keep things moving. As the weeks go by, other commitments come up, and no one checks in on whether you are keeping up with your share. How likely are you to let your tasks slide or put them off even though the group is depending on you, with 5 being the most likely?")
+
+C9 = likert("You set up a detailed weekly plan that spells out your study sessions, errands, meals, breaks, and the times you want to relax. As the week unfolds, unexpected invitations, tiring days, and extra assignments appear. How likely are you to continue following your planned schedule instead of adjusting things freely as you go, with 5 being the most likely?")
+
+C1 = likert("You have an important meeting or event coming up that could influence something meaningful for you. In the days leading to it, you have the chance to organize everything, check your materials, and rehearse what you need to do. How likely are you to arrive feeling fully prepared rather than relying on last-minute effort, with 5 being the most likely?")
+
+C10 = likert("You are given a task that requires careful attention, such as formatting a document, assembling something correctly, or organizing data. Even small errors would affect the outcome. How likely are you to work slowly and precisely so that every detail is correct, with 5 being the most likely?")
+
+C5 = likert("You have several chores waiting for you at home, such as cleaning, laundry, or organizing something that has piled up. You have time to do them now, but you could also relax or put them off until later. How likely are you to take care of these chores right away rather than delaying them, with 5 being the most likely?")
+
+C4 = likert("You begin working on a project that involves papers, tools, devices, or multiple files. As you get deeper into the work, items build up around you. How likely are you to let your workspace grow more scattered and disorganized instead of keeping things neat, with 5 being the most likely?")
+
+N7 = likert("Over the course of a normal week, you deal with school, work, friends, and unexpected situations. Some days feel easy while others feel stressful. How likely are you to experience noticeable shifts in your mood from one moment to the next, with 5 being the most likely?")
+
+C3 = likert("You review a document, assignment, or message before submitting it. It contains small formatting issues, grammar mistakes, or unclear phrases that require careful review to catch. How likely are you to notice these small details and fix them, with 5 being the most likely?")
+
+A10 = likert("You join a group where someone new seems quiet or unsure of themselves. Conversation begins, and there is a chance to include them. How likely are you to help them feel comfortable and welcomed rather than leaving them on the outside of the discussion, with 5 being the most likely?")
+
+C2 = likert("Throughout an average day, you use items like jackets, notebooks, chargers, and water bottles. As you move from place to place, you set things down and switch tasks frequently. How likely are you to leave your belongings scattered in different spots rather than keeping them together and organized, with 5 being the most likely?")
+
+N5 = likert("You are concentrating on something important when small interruptions occur, such as noises, messages, or people asking quick questions. How likely are you to lose focus or feel unsettled by these interruptions, with 5 being the most likely?")
+
+A8 = likert("You are in the middle of something you want to finish when a friend reaches out asking for help with a problem. Assisting them would require pausing what you are doing. How likely are you to set aside your own plans to make time for them, with 5 being the most likely?")
+
+O2 = likert("You encounter an idea that is theoretical and not tied to a concrete example, such as a philosophical concept or a complex model. How likely are you to find it confusing or difficult to grasp compared to more practical ideas, with 5 being the most likely?")
+
+E10 = likert("You arrive at a social gathering where most of the people are unfamiliar to you. Small groups begin forming, and conversations start to flow. How likely are you to stay mostly quiet and observe rather than joining in, with 5 being the most likely?")
 
 
 if st.button("Predict"):
@@ -39,5 +84,4 @@ if st.button("Predict"):
     ]).reshape(1, -1)
 
     pred = model_prediction(X)
-
-    st.success(f"Prediction: {pred}")
+    st.success(f"Your predicted score is: {pred}")
