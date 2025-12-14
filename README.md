@@ -1,5 +1,18 @@
 # SRI – Predicting and Measuring Grit in Leaders  
 
+## 👥 **Team Members**
+
+| Name             | GitHub Handle | Contribution                                                             |
+|------------------|---------------|--------------------------------------------------------------------------|
+| Rishik    | @example | example: Data exploration, visualization, overall project coordination,exploratory data analysis (EDA),dataset documentation, Data preprocessing, feature engineering, data validation, Model selection, hyperparameter tuning, model training and optimization, Model evaluation, performance analysis, results interpretation,           |
+| Fida   | @example     |   |
+| Rithika     | @example  |                  |
+| Annie      | @example       |   |
+| Amal       | @example    |            |
+| Tulasi      | @example       |   |
+| Sushmit       | @example    |            |
+
+
 ## 📌 Project Overview  
 Investors often rely on both financial data and leadership qualities when making funding decisions. Leadership plays a critical role in a company’s success, and research shows that “grit”—a combination of perseverance and passion—is a strong predictor of long-term success.  
 
@@ -38,7 +51,34 @@ We will leverage well-established psychological datasets:
 - Deliver a final report summarizing:  
   - Key predictive factors of grit.  
   - Model limitations and generalizability concerns.  
-  - Recommendations for future improvements and scaling.  
+  - Recommendations for future improvements and scaling.
+
+ ## 🚀 **Next Steps**
+
+**You might consider addressing the following (as applicable):**
+
+* What are some of the limitations of your model?
+* What would you do differently with more time/resources?
+* What additional datasets or techniques would you explore?
+
+
+## 📝 **License**
+
+If applicable, indicate how your project can be used by others by specifying and linking to an open source license type (e.g., MIT, Apache 2.0). Make sure your Challenge Advisor approves of the selected license type.
+
+**Example:**
+This project is licensed under the MIT License.
+
+
+## 📄 **References** (Optional but encouraged)
+
+Cite relevant papers, articles, or resources that supported your project.
+
+
+## 🙏 **Acknowledgements** (Optional but encouraged)
+
+Thank your Challenge Advisor, host company representatives, TA, and others who supported your project.
+
 
 
 ## ⚙️ Tech Stack  
@@ -52,8 +92,12 @@ We will leverage well-established psychological datasets:
 (BLANK FOR NOW)
 
 
----
+## 👩🏽‍💻 **Setup and Installation**
+**Provide step-by-step instructions so someone else can run your code and reproduce your results. Depending on your setup, include:**
 
-## ▶️ How to Run  
-(BLANK FOR NOW)
+* How to clone the repository
+* How to install dependencies
+* How to set up the environment
+* How to access the dataset(s)
+* How to run the notebook or scripts
 
