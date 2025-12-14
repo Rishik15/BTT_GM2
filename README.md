@@ -4,11 +4,11 @@
 
 | Name             | GitHub Handle | Contribution                                                             |
 |------------------|---------------|--------------------------------------------------------------------------|
-| Rishik    | @example | example: Data exploration, visualization, overall project coordination,exploratory data analysis (EDA),dataset documentation, Data preprocessing, feature engineering, data validation, Model selection, hyperparameter tuning, model training and optimization, Model evaluation, performance analysis, results interpretation,           |
-| Fida   | @example     |   |
-| Rithika     | @example  |                  |
-| Annie      | @example       |   |
-| Amal       | @example    |            |
+| Rishik    | @Rishik15 | example: Data exploration, visualization, overall project coordination,exploratory data analysis (EDA),dataset documentation, Data preprocessing, feature engineering, data validation, Model selection, hyperparameter tuning, model training and optimization, Model evaluation, performance analysis, results interpretation,           |
+| Fida   | @fibi5     |   |
+| Rithika     | @rashok1  |                  |
+| Annie      | @annie251       |   |
+| Amal       | @AmalBilal1    |            |
 | Tulasi      | @example       |   |
 | Sushmit       | @example    |            |
 
