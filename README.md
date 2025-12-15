@@ -9,8 +9,6 @@
 | Rithika | @rashok1      | Data Cleaning/Preprocessing, EDA, Classification Model Training              |
 | Annie   | @annie251     | EDA, Data Cleaning, Data Preprocessing, Documentation                        |
 | Amal    | @AmalBilal1   | EDA, Data Preprocessing                                                      |
-| Tulasi  | @example      |                                                                              |
-| Sushmit | @example      |                                                                              |
 
 ## 📌 Project Overview
 
