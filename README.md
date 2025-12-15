@@ -1,6 +1,6 @@
 # SRI – Predicting and Measuring Grit in Leaders
 
-## 👥 **Team Members**
+## **Team Members**
 
 | Name    | GitHub Handle | Contribution                                                                 |
 | ------- | ------------- | ---------------------------------------------------------------------------- |
@@ -10,27 +10,27 @@
 | Annie   | @annie251     | EDA, Data Cleaning, Data Preprocessing, Documentation                        |
 | Amal    | @AmalBilal1   | EDA, Data Preprocessing                                                      |
 
-## 📌 Project Overview
+## Project Overview
 
 Investors often rely on both financial data and leadership qualities when making funding decisions. Leadership plays a critical role in a company’s success, and research shows that “grit”—a combination of perseverance and passion—is a strong predictor of long-term success.
 
 This project explores methods to estimate grit in individuals, especially leaders (e.g., CEOs), with the ultimate goal of designing a lightweight, data-driven grit survey that can support investment decision-making.
 
-## 🚩 Problem Statement
+## Problem Statement
 
 We aim to answer two key questions:
 
 1. **What are the main predictors of grit in an individual?**
 2. **Can we design a survey that reliably estimates whether or not an individual demonstrates grit?**
 
-## 📊 Datasets
+## Datasets
 
 We will leverage well-established psychological datasets:
 
 - **Duckworth’s Grit Data** – includes grit scores from validated surveys.
 - **Cattell’s 16 Personality Factors Test** – focuses on personality traits; we will pay special attention to “self-reliance” as a proxy for grit.
 
-## 🗺️ Project Roadmap
+## Project Roadmap
 
 ### **Month 1: Data Cleaning & Exploration (by end of September)**
 
@@ -55,10 +55,12 @@ We will leverage well-established psychological datasets:
   - Model limitations and generalizability concerns.
   - Recommendations for future improvements and scaling.
 
-## 🚀 **Next Steps**
+## **Next Steps**
 
 ### **Regression Model Limitations & Future Improvements**
-  While the final regression model (XGBoost) achieves solid and competitive performance, several limitations and opportunities for improvement remain:
+
+While the final regression model (XGBoost) achieves solid and competitive performance, several limitations and opportunities for improvement remain:
+
 - Future work could explore leveraging XGBoost’s built-in feature importance metrics or SHAP-based feature ranking to select the top predictors in a way that is more tightly aligned with the model’s internal decision-making process.
 - Additional performance gains may be possible through feature engineering, such as:
   - Interaction features between key personality traits
@@ -66,7 +68,7 @@ We will leverage well-established psychological datasets:
   - Aggregated or composite features that better capture behavioral patterns
 - While XGBoost was chosen for its strong performance and robustness, experimenting with alternative models (e.g., ensemble stacking, neural networks, or regularized nonlinear models) may further improve predictive accuracy or generalizability.
 
-## 📝 **License**
+## **License**
 
 MIT License
 
@@ -82,11 +84,11 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-## 📄 **References** (Optional but encouraged)
+## **References** (Optional but encouraged)
 
 Cite relevant papers, articles, or resources that supported your project.
 
-## 🙏 **Acknowledgements** (Optional but encouraged)
+## **Acknowledgements** (Optional but encouraged)
 
 Thank your Challenge Advisor, host company representatives, TA, and others who supported your project.
 
@@ -97,14 +99,35 @@ Thank your Challenge Advisor, host company representatives, TA, and others who s
 - **Streamlit** for prototype survey app
 - **Git/GitHub** for version control & collaboration
 
-## 📂 Repository Structure
+## **Setup and Installation**
 
-## 👩🏽‍💻 **Setup and Installation**
+### 1. Create and activate a virtual environment (optional but recommended)
 
-**Provide step-by-step instructions so someone else can run your code and reproduce your results. Depending on your setup, include:**
+```bash
+python -m venv venv
+source venv/bin/activate      # macOS / Linux
+venv\Scripts\activate         # Windows
+```
 
-- How to clone the repository
-- How to install dependencies
-- How to set up the environment
-- How to access the dataset(s)
-- How to run the notebook or scripts
+### 2. Install dependencies
+
+From the project root directory:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Navigate to the Streamlit app folder
+
+```bash
+cd streamlit_app
+```
+
+### Run the app
+
+```bash
+streamlit run app.py
+```
+
+The app will be available at http://localhost:8501.
+To stop the app, press Ctrl + C.
