@@ -4,7 +4,7 @@
 
 | Name             | GitHub Handle | Contribution                                                             |
 |------------------|---------------|--------------------------------------------------------------------------|
-| Rishik    | @Rishik15 | example: Data exploration, visualization, overall project coordination,exploratory data analysis (EDA),dataset documentation, Data preprocessing, feature engineering, data validation, Model selection, hyperparameter tuning, model training and optimization, Model evaluation, performance analysis, results interpretation,           |
+| Rishik    | @Rishik15 | BaselineModeling, FeatureSelection, StreamlitApplication           |
 | Fida   | @fibi5     |   |
 | Rithika     | @rashok1  |                  |
 | Annie      | @annie251       |   |
