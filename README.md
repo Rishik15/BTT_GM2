@@ -57,11 +57,14 @@ We will leverage well-established psychological datasets:
 
 ## 🚀 **Next Steps**
 
-**You might consider addressing the following (as applicable):**
-
-- What are some of the limitations of your model?
-- What would you do differently with more time/resources?
-- What additional datasets or techniques would you explore?
+### **Regression Model Limitations & Future Improvements**
+  While the final regression model (XGBoost) achieves solid and competitive performance, several limitations and opportunities for improvement remain:
+- Future work could explore leveraging XGBoost’s built-in feature importance metrics or SHAP-based feature ranking to select the top predictors in a way that is more tightly aligned with the model’s internal decision-making process.
+- Additional performance gains may be possible through feature engineering, such as:
+  - Interaction features between key personality traits
+  - Nonlinear transformations of existing variables
+  - Aggregated or composite features that better capture behavioral patterns
+- While XGBoost was chosen for its strong performance and robustness, experimenting with alternative models (e.g., ensemble stacking, neural networks, or regularized nonlinear models) may further improve predictive accuracy or generalizability.
 
 ## 📝 **License**
 
