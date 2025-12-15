@@ -5,9 +5,9 @@
 | Name             | GitHub Handle | Contribution                                                             |
 |------------------|---------------|--------------------------------------------------------------------------|
 | Rishik    | @Rishik15 | BaselineModeling, FeatureSelection, StreamlitApplication           |
-| Fida   | @fibi5     | EDA, Data Cleaning, Documentation, README  |
+| Fida   | @fibi5     |   |
 | Rithika     | @rashok1  |                  |
-| Annie      | @annie251       |   |
+| Annie      | @annie251       | EDA, Data Cleaning, Documentation, README |
 | Amal       | @AmalBilal1    |            |
 | Tulasi      | @example       |   |
 | Sushmit       | @example    |            |
