@@ -65,10 +65,19 @@ We will leverage well-established psychological datasets:
 
 ## 📝 **License**
 
-If applicable, indicate how your project can be used by others by specifying and linking to an open source license type (e.g., MIT, Apache 2.0). Make sure your Challenge Advisor approves of the selected license type.
+MIT License
 
-**Example:**
-This project is licensed under the MIT License.
+Copyright (c) 2025 SRI – Predicting and Measuring Grit in Leaders
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
 ## 📄 **References** (Optional but encouraged)
 
@@ -86,16 +95,6 @@ Thank your Challenge Advisor, host company representatives, TA, and others who s
 - **Git/GitHub** for version control & collaboration
 
 ## 📂 Repository Structure
-
-- BaselineModeling/ # Baseline models and initial performance benchmarks
-- EDA/ # Exploratory data analysis visualizations & data preperation
-- FeatureSelection/ # Feature engineering and feature selection experiments
-- ModelTraining/ # Final model training, tuning, and evaluation
-- data/ # Raw and processed datasets
-- models/ # Saved best trained models
-- streamlit_app/ # Streamlit survey prototype application
-- .gitignore # Git ignore rules
-- README.md # Project documentation
 
 ## 👩🏽‍💻 **Setup and Installation**
 
