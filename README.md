@@ -89,7 +89,15 @@ Thank your Challenge Advisor, host company representatives, TA, and others who s
 
 
 ## 📂 Repository Structure 
-(BLANK FOR NOW)
+- BaselineModeling/        # Baseline models and initial performance benchmarks
+- EDA/                     # Exploratory data analysis visualizations & data preperation
+- FeatureSelection/        # Feature engineering and feature selection experiments
+- ModelTraining/           # Final model training, tuning, and evaluation
+- data/                    # Raw and processed datasets
+- models/                  # Saved best trained models
+- streamlit_app/           # Streamlit survey prototype application
+- .gitignore               # Git ignore rules
+- README.md                # Project documentation        
 
 
 ## 👩🏽‍💻 **Setup and Installation**
