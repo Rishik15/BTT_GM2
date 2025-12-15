@@ -4,8 +4,8 @@
 
 | Name    | GitHub Handle | Contribution                                                                 |
 | ------- | ------------- | ---------------------------------------------------------------------------- |
-| Rishik  | @Rishik15     | BaselineModeling, FeatureSelection, StreamlitApplication                     |
-| Fida    | @fibi5        | EDA, Data Preperation, Regression Model Training and Tuning, Task Management |
+| Rishik  | @Rishik15     | Baseline Modeling, Feature Selection, Streamlit Application                     |
+| Fida    | @fibi5        | EDA, Data Preprocessing, Regression Model Training and Tuning, Task Management |
 | Rithika | @rashok1      | Data Cleaning/Preprocessing, EDA, Classification Model Training              |
 | Annie   | @annie251     | EDA, Data Cleaning, Data Preprocessing, Documentation                        |
 | Amal    | @AmalBilal1   | EDA, Data Preprocessing                                                      |
@@ -23,37 +23,71 @@ We aim to answer two key questions:
 1. **What are the main predictors of grit in an individual?**
 2. **Can we design a survey that reliably estimates whether or not an individual demonstrates grit?**
 
-## Datasets
+##  **Data Exploration**
 
-We will leverage well-established psychological datasets:
+The dataset used in this project was sourced from Kaggle and originates from OpenPsychometrics.org, a nonprofit platform dedicated to psychological research and public education:
 
-- **Duckworth’s Grit Data** – includes grit scores from validated surveys.
-- **Cattell’s 16 Personality Factors Test** – focuses on personality traits; we will pay special attention to “self-reliance” as a proxy for grit.
+- **Source** – Duckworth Grit Scale Responses https://www.kaggle.com/datasets/lucasgreenwell/duckworth-grit-scale-responses/data
+- **Format** – CSV
+- **Shape** – 4,270 rows × 98 columns
+- **Size** – 950 KB
 
-## Project Roadmap
 
-### **Month 1: Data Cleaning & Exploration (by end of September)**
+**The dataset includes**:
 
-- Gather and clean grit-related datasets (resolve missing or inconsistent data).
-- Exploratory Data Analysis (EDA):
-  - Correlate grit scores with personality traits.
-  - Compare demographic distributions across datasets.
+- **Big Five Personality Responses** - Participants rated 50 personality items (10 per trait: Extraversion, Neuroticism, Agreeableness, Conscientiousness, Openness) on a 5-point scale
+- **Angela Duckworth’s Grit Scale Responses** - Participants answered 12 grit-related items measuring perseverance and consistency of interests, rated on a 5-point scale
+- **Vocabulary Checklist (VCL)** - A word recognition task used as a validity check, including both real and non-real words.
+- **Demographic & Background Information** - Variables such as age, gender, education level, native language, country, and family size.
+- **Technical Metadata** - Information such as time spent on each survey page, browser type, operating system, and screen resolution.
 
-### **Month 2: ML Model Building & Testing (by end of October)**
+The primary objective of the data exploration phase was to identify which specific Big Five survey questions are most predictive of an individual’s grit score.
 
-- Train regression and classification models to predict grit.
-- Address class imbalance, particularly for underrepresented groups.
-- Evaluate models with standard metrics (accuracy, F1, ROC-AUC) and **bias/fairness metrics**.
-- Use **SHAP values** to identify top predictors of grit.
+**To ensure high-quality, meaningful data for modeling we**:
 
-### **Month 3: Solution Delivery (by end of November / early December)**
+- Removed participants who failed the vocabulary check (indicating careless responses).  
+- Filtered out rows with unreasonable survey completion times:
+  - testelapse: 75–2000 seconds  
+  - introelapse: 0–800 seconds  
+  - surveyelapse: 72–2000 seconds  
+- Replaced missing demographic values with "unknown".  
+- Filtered out participants under 18 years old, extreme ages, and unrealistic family sizes.  
+- Calculated aggregate grit and personality scores for each participant.  
+- Filled missing survey responses with the median.  
 
-- Draft a lightweight **grit survey** for use with funding applicants.
-- Build a prototype **Streamlit app** to administer the survey.
-- Deliver a final report summarizing:
-  - Key predictive factors of grit.
-  - Model limitations and generalizability concerns.
-  - Recommendations for future improvements and scaling.
+**Exploratory analyses included**:
+
+- Distribution of missing values and survey responses.  
+- Validation of internal consistency for each scale.  
+- Correlations between personality traits and grit. Conscientiousness was strongly correlated with grit.  
+- Demographic distributions revealed skew: most participants were female, white, Christian, heterosexual, right-handed, and lived in the US.  
+  - Most demographic variables had low correlation with grit, except for age, education, and marital status.  
+- To ensure fairness and inclusivity, only married, age, and family size were included as demographic features, removing variables that reflect access or background rather than ability.
+
+
+##  **Model Development**
+
+**You might consider describing the following (as applicable):**
+
+* Model(s) used (e.g., CNN with transfer learning, regression models)
+* Feature selection and Hyperparameter tuning strategies
+* Training setup (e.g., % of data for training/validation, evaluation metric, baseline performance)
+
+
+##  **Results & Key Findings**
+
+**You might consider describing the following (as applicable):**
+
+* Performance metrics (e.g., Accuracy, F1 score, RMSE)
+* How your model performed
+* Insights from evaluating model fairness
+
+**Potential visualizations to include:**
+
+* Confusion matrix, precision-recall curve, feature importance plot, prediction distribution, outputs from fairness or explainability tools
+
+
+
 
 ## **Next Steps**
 
@@ -67,6 +101,10 @@ While the final regression model (XGBoost) achieves solid and competitive perfor
   - Nonlinear transformations of existing variables
   - Aggregated or composite features that better capture behavioral patterns
 - While XGBoost was chosen for its strong performance and robustness, experimenting with alternative models (e.g., ensemble stacking, neural networks, or regularized nonlinear models) may further improve predictive accuracy or generalizability.
+
+### **Streamlit App Future Improvements**
+
+The Streamlit prototype successfully demonstrates how a lightweight grit survey could be administered in practice, but there are still improvements that can be made with the user interface & design.
 
 ## **License**
 
@@ -83,10 +121,6 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
-## **References** (Optional but encouraged)
-
-Cite relevant papers, articles, or resources that supported your project.
 
 ## **Acknowledgements** (Optional but encouraged)
 
