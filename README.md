@@ -59,32 +59,59 @@ The primary objective of the data exploration phase was to identify which specif
 
 - Distribution of missing values and survey responses.  
 - Validation of internal consistency for each scale.  
-- Correlations between personality traits and grit. Conscientiousness was strongly correlated with grit.  
-- Demographic distributions revealed skew: most participants were female, white, Christian, heterosexual, right-handed, and lived in the US.  
-  - Most demographic variables had low correlation with grit, except for age, education, and marital status.  
+- Correlations between personality traits and grit. Conscientiousness was strongly correlated with grit.
+![](results/figures/correlation_heatmap.png)
+
+- Demographic distributions revealed skew: most participants were female, white, Christian, heterosexual, right-handed, and lived in the US.
+![](results/figures/race_distribution.png)
+
+  - Most demographic variables had low correlation with grit, except for age, education, and marital status.
+![](results/figures/married.png)
 - To ensure fairness and inclusivity, only married, age, and family size were included as demographic features, removing variables that reflect access or background rather than ability.
+
 
 
 ##  **Model Development**
 
-**You might consider describing the following (as applicable):**
+### **Baseline Models**
 
-* Model(s) used (e.g., CNN with transfer learning, regression models)
-* Feature selection and Hyperparameter tuning strategies
-* Training setup (e.g., % of data for training/validation, evaluation metric, baseline performance)
+**Classification**  
+- **Goal:** Predict grit class from survey responses.  
+- **Models:** Dummy classifier, Logistic Regression (L1/L2)  
+- **Results:** Logistic regression outperformed dummy (~50% accuracy). L1 slightly better than L2.  
+- **Insight:** Survey questions contain meaningful predictive signals.  
+
+**Regression**  
+- **Goal:** Predict grit score.  
+- **Models:** Dummy (mean), Linear, Ridge, Lasso Regression  
+- **Results:** All outperformed dummy; models similar in performance.  
+- **Insight:** Feature engineering needed to improve predictions.  
+
+### **Feature Selection**
+
+**Techniques:** Correlation filtering, L1-regularization, RFE  
+**Goal:** Identify top 15 features most predictive of grit (classification & regression)  
+**Features Considered:** Big Five items (E1–E10, N1–N10, etc.), age, marital status, vocab score  
+
+
+### **Advanced Models**
+
+**Classification (High/Medium/Low grit)**  
+- **Models:** LightGBM, XGBoost, Ensemble  
+- **Best:** XGBoost — Accuracy 0.736, F1 0.725  
+- **Insight:** Top 15 features capture strong predictive signal for grit class.
+
+**Regression (XGBoost)**  
+- **Untuned:** MAE_test 0.414, R²_test 0.391  
+- **Tuned (Optuna):** MAE_test 0.392, R²_test 0.500  
+- **Insight:** Tuning improved generalization; top features drive predictions.  
 
 
 ##  **Results & Key Findings**
-
-**You might consider describing the following (as applicable):**
-
-* Performance metrics (e.g., Accuracy, F1 score, RMSE)
-* How your model performed
-* Insights from evaluating model fairness
-
-**Potential visualizations to include:**
-
-* Confusion matrix, precision-recall curve, feature importance plot, prediction distribution, outputs from fairness or explainability tools
+![](results/figures/class_compare.png)
+![](results/figures/shap_class.png)
+![](results/figures/compare_reg.png)
+![](results/figures/shap_reg.png)
 
 
 
@@ -122,9 +149,12 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-## **Acknowledgements** (Optional but encouraged)
+## **Acknowledgements**
 
-Thank your Challenge Advisor, host company representatives, TA, and others who supported your project.
+We would like to thank everyone who supported this project:
+
+- **Challenge Advisors:** John Cook and Henry L. Wright, for providing the industry challenge and guidance throughout the project.  
+- **Coach:** Elizabeth Parnell, for her invaluable support and assistance whenever we encountered issues.  
 
 ## Tech Stack
 
