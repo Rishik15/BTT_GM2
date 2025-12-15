@@ -92,7 +92,7 @@ Cite relevant papers, articles, or resources that supported your project.
 
 Thank your Challenge Advisor, host company representatives, TA, and others who supported your project.
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - **Python** (pandas, scikit-learn, SHAP, matplotlib/seaborn)
 - **Jupyter Notebooks** for data exploration & model building
@@ -101,7 +101,23 @@ Thank your Challenge Advisor, host company representatives, TA, and others who s
 
 ## **Setup and Installation**
 
-### 1. Create and activate a virtual environment (optional but recommended)
+## Running the Streamlit App
+
+### 1. Clone the repository
+
+First, clone the project repository to your local machine using Git:
+
+```bash
+git clone https://github.com/Rishik15/BTT_GM2.git
+```
+
+After cloning, move into the project directory:
+
+```
+cd BTT_GM2
+```
+
+### 2. Create and activate a virtual environment (optional but recommended)
 
 ```bash
 python -m venv venv
@@ -109,7 +125,7 @@ source venv/bin/activate      # macOS / Linux
 venv\Scripts\activate         # Windows
 ```
 
-### 2. Install dependencies
+### 3. Install dependencies
 
 From the project root directory:
 
@@ -117,13 +133,13 @@ From the project root directory:
 pip install -r requirements.txt
 ```
 
-### Navigate to the Streamlit app folder
+### 4. Navigate to the Streamlit app folder
 
 ```bash
 cd streamlit_app
 ```
 
-### Run the app
+### 5. Run the app
 
 ```bash
 streamlit run app.py
