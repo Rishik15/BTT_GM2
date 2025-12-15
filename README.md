@@ -101,8 +101,6 @@ Thank your Challenge Advisor, host company representatives, TA, and others who s
 
 ## **Setup and Installation**
 
-## Running the Streamlit App
-
 ### 1. Clone the repository
 
 First, clone the project repository to your local machine using Git:
